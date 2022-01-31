@@ -5,7 +5,7 @@ const orders = getOrders()
 
 
 const employeeOrders = (employee) => {
-    const fulfilledOrders = 0
+    let fulfilledOrders = 0
 
     for (const order of orders) {
         if (order.employeeId === employee.id) {
@@ -23,11 +23,10 @@ const employeeOrders = (employee) => {
 document.addEventListener(
     "click",
     (clickEvent) => {
-        const itemClicked = clickEvent.target
+        let itemClicked = clickEvent.target
         if (itemClicked.id.startsWith("employee")) {
             const [,employeeId] = itemClicked.id.split("--")
-
-            for (const employee of employees) {
+             for (const employee of employees) {
                 if (employee.id === parseInt(employeeId)) {
                     
                     const orderAmount = employeeOrders(employee)
@@ -39,7 +38,7 @@ document.addEventListener(
     }
 )
 
-const employees = getEmployees()
+let employees = getEmployees()
 
 export const Employees = () => {
     let html = "<ul>"
