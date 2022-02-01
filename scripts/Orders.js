@@ -9,7 +9,7 @@ const orders = getOrders()
 // Function whose responsibility is to find the product for an order
 const findProduct = (order, allProducts) => {
     let orderProduct = 0
-
+3
     for (const product of products) {
         if (product.id === order.productId) {
             orderProduct = product
